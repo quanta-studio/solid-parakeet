@@ -1,0 +1,22 @@
+flowchart TB
+    Q["Work queue / backlog"] --> COORD["COORDINATOR<br/>dispatcher · rolling priorities · hand-off"]
+
+    subgraph FLEET["Executor agents — one branch, one worktree each"]
+      direction LR
+      E1["Agent A<br/>worktree · branch"]
+      E2["Agent B<br/>worktree · branch"]
+      E3["Agent C<br/>worktree · branch"]
+    end
+    COORD -->|assigns work| FLEET
+
+    subgraph CH["Shared coordination — externalized, in no single head"]
+      direction LR
+      BOARD["LIVE BOARD<br/>who's doing what now<br/><i>ephemeral</i>"]
+      MEM["DURABLE MEMORY<br/>compounding knowledge<br/><i>curated</i>"]
+    end
+    FLEET <-->|claim / status| BOARD
+    FLEET -.->|recall / write| MEM
+
+    FLEET --> REV["Independent review gate<br/>adversarial · evidence-based"]
+    REV -->|pass| MERGE["Merge<br/>branch / stack discipline"]
+    REV -->|fail| COORD

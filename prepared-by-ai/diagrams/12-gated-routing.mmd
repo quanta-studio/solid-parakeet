@@ -1,0 +1,10 @@
+flowchart TD
+    Q["Incoming work (queue)"] --> CLS{"Assess risk"}
+    CLS -->|low| LOW["Autonomous<br/>spec → plan → PR → notify"]
+    CLS -->|medium / high| HI["Human gate<br/>analyze → plan → parity check"]
+    HI --> CONF{"Human confirms?"}
+    CONF -->|no| REVISE["Revise plan"]
+    REVISE --> CONF
+    CONF -->|yes| GO["Proceed to PR"]
+    LOW --> DONE["Merge + record"]
+    GO --> DONE

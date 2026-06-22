@@ -1,0 +1,11 @@
+flowchart TB
+    T["Incoming task"] --> R{"Risk / blast radius?"}
+    R -->|"Low · reversible"| A1["AUTONOMOUS<br/>open PR · notify on done"]
+    R -->|"Medium"| A2["HUMAN GATE<br/>analyze + plan → confirm → proceed"]
+    R -->|"High · irreversible"| A3["HUMAN PAIR<br/>approval before each step"]
+    A1:::lo
+    A2:::mid
+    A3:::hi
+    classDef lo fill:#e7f6ec,stroke:#76c193;
+    classDef mid fill:#fdf4e3,stroke:#e0b15f;
+    classDef hi fill:#fdeaea,stroke:#d98b8b;

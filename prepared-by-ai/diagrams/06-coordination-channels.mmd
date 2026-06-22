@@ -1,0 +1,8 @@
+flowchart LR
+    subgraph LIVE["LIVE channel — low latency, disposable"]
+      B["Coordination board<br/>claims · status · conflicts<br/><i>real-time, this session</i>"]
+    end
+    subgraph DUR["DURABLE channel — async, compounding"]
+      K["Curated memory<br/>lessons · constraints · prefs<br/><i>survives across sessions</i>"]
+    end
+    B -. "different lifetimes · never mixed" .- K

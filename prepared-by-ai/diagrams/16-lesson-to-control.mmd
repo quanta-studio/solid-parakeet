@@ -1,0 +1,5 @@
+flowchart LR
+    OBS["Failure observed<br/>in real use"] --> ROOT["Find the root mode<br/>not the symptom"]
+    ROOT --> ENCODE["Encode the fix into<br/>the default path"]
+    ENCODE --> PREVENT["Recurrence designed out"]
+    PREVENT -.->|next surprise| OBS

@@ -1,0 +1,5 @@
+flowchart LR
+    ONE["One-off procedure<br/>done by hand"] --> CAP["Capture as a named playbook<br/>(reusable skill)"]
+    CAP --> INV["Invoke on demand<br/>same steps, every time"]
+    INV --> IMP["Improve in place"]
+    IMP -.->|next invocation| INV

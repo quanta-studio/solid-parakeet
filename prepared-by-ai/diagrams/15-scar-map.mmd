@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph F["Failure modes — the scars"]
+      direction TB
+      F1["Confident fabrication"]
+      F2["Context bloat"]
+      F3["Agents colliding"]
+      F4["Memory rot"]
+      F5["Wrong leash"]
+      F6["Tacit conventions"]
+    end
+    subgraph C["Controls they forced"]
+      direction TB
+      C1["Adversarial cross-vendor review + evidence"]
+      C2["Tiered memory"]
+      C3["Worktree isolation + claim board"]
+      C4["Curation: dedup · delete-wrong · verify"]
+      C5["Risk-tiered autonomy"]
+      C6["Authored rules + playbooks"]
+    end
+    F1 --> C1
+    F2 --> C2
+    F3 --> C3
+    F4 --> C4
+    F5 --> C5
+    F6 --> C6
+    classDef scar fill:#fdeaea,stroke:#d98b8b;
+    classDef ctrl fill:#e7f6ec,stroke:#76c193;
+    class F1,F2,F3,F4,F5,F6 scar;
+    class C1,C2,C3,C4,C5,C6 ctrl;

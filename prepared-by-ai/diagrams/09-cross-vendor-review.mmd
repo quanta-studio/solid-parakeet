@@ -1,0 +1,7 @@
+flowchart LR
+    A["Author agent<br/>(Model A)"] --> WORK["Proposed change<br/>+ claimed evidence"]
+    WORK --> B["Reviewer agent<br/>(Model B — different vendor)"]
+    B --> TRY{"Try to refute:<br/>shortcuts? fabricated?<br/>steps skipped?"}
+    TRY -->|refuted| BACK["Back to author<br/>with the evidence"]
+    BACK --> WORK
+    TRY -->|survives| OK["Accept<br/>evidence shown, not asserted"]

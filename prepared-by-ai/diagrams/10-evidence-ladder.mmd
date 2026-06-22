@@ -1,0 +1,8 @@
+flowchart BT
+    C1["'It works'<br/><i>bare assertion — rejected</i>"] --> C2["Tests written<br/><i>but not run</i>"]
+    C2 --> C3["Tests run — output shown"]
+    C3 --> C4["Independently reproduced<br/>by a different model"]
+    C1:::weak
+    C4:::strong
+    classDef weak fill:#fdeaea,stroke:#d98b8b;
+    classDef strong fill:#e7f6ec,stroke:#76c193;

@@ -1,0 +1,17 @@
+flowchart TB
+    CTX["AGENT CONTEXT WINDOW<br/>(finite + costly attention)"]
+
+    subgraph HOT["HOT — always-on index"]
+      H["1 line per fact · tiny footprint<br/>cross-cutting only<br/><i>like L1 cache: small, instant</i>"]
+    end
+    subgraph WARM["WARM — on-demand catalogs"]
+      W["domain-grouped facts<br/>loaded only when task enters that area<br/><i>like L2/L3: bigger, fetched</i>"]
+    end
+    subgraph COLD["COLD — recalled by relevance"]
+      C["full detail · one fact = one file<br/>pulled in only when summary matches task<br/><i>like DB rows behind an index</i>"]
+    end
+
+    HOT -->|"points to"| WARM -->|"points to"| COLD
+    HOT -.->|loaded every session| CTX
+    WARM -.->|loaded when in-area| CTX
+    COLD -.->|surfaced when relevant| CTX

@@ -1,0 +1,16 @@
+flowchart TB
+    subgraph RULES["AUTHORED RULES — project instructions"]
+      direction TB
+      R1["written by humans"]
+      R2["deterministic · versioned in git"]
+      R3["always apply · policy"]
+    end
+    subgraph MEM["LEARNED MEMORY — curated facts"]
+      direction TB
+      M1["accrued from experience"]
+      M2["recalled by relevance"]
+      M3["compounding · prunable"]
+    end
+    AGENT["Agent behavior"]
+    RULES --> AGENT
+    MEM --> AGENT

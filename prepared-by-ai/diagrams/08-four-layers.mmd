@@ -1,0 +1,10 @@
+flowchart TB
+    subgraph OS["The operating layer around the SDLC"]
+      direction TB
+      L1["AUTHORED RULES<br/><i>versioned policy the agent reads</i>"]
+      L2["LEARNED MEMORY<br/><i>curated, compounding facts</i>"]
+      L3["LIVE COORDINATION<br/><i>who's doing what now</i>"]
+      L4["ADVERSARIAL VERIFICATION<br/><i>cross-vendor · evidence-based</i>"]
+    end
+    SDLC["Normal SDLC<br/>spec → plan → build → review → merge"]
+    OS --> SDLC

@@ -1,0 +1,13 @@
+flowchart TD
+    T["Task enters queue"] --> A["Coordinator assigns to an agent"]
+    A --> C{"Board: is the branch / area<br/>already owned?"}
+    C -->|yes| R["Pick different work<br/>or coordinate"]
+    R --> A
+    C -->|no| CLAIM["Claim row on board<br/>(repo · branch · task · status)"]
+    CLAIM --> ISO["Work in isolated worktree"]
+    ISO --> PR["Open PR"]
+    PR --> REV{"Independent review —<br/>pass?"}
+    REV -->|no| FIX["Revise<br/>(evidence required)"]
+    FIX --> REV
+    REV -->|yes| M["Merge<br/>(correct base / stack order)"]
+    M --> DONE["Mark board row Done<br/>+ write durable memory"]

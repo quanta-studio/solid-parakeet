@@ -1,0 +1,10 @@
+flowchart LR
+    IN["Intake<br/>task / ticket"] --> SPEC["Spec<br/>intent + scope"]
+    SPEC --> PLAN["Written plan<br/>steps + checkpoints"]
+    PLAN --> DISP["Coordinator dispatch"]
+    DISP --> WORK["Isolated agents<br/>build in worktrees"]
+    WORK --> REV{"Adversarial review"}
+    REV -->|fail| WORK
+    REV -->|pass| MERGE["Merge"]
+    MERGE --> LEARN["Write durable memory"]
+    LEARN -.->|recall next time| WORK

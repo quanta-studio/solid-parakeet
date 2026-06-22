@@ -1,0 +1,13 @@
+flowchart TD
+    NEW["New fact"] --> Q1{"Worth keeping<br/>past this task?"}
+    Q1 -->|no| DISCARD["Discard (ephemeral)"]
+    Q1 -->|yes| Q2{"Already covered by<br/>an existing fact?"}
+    Q2 -->|yes| UPDATE["Update in place<br/>(no duplicates)"]
+    Q2 -->|no| Q3{"Already the source of truth<br/>elsewhere (code / git / docs)?"}
+    Q3 -->|yes| POINT["Don't store —<br/>point to the source<br/>(avoid staleness)"]
+    Q3 -->|no| WRITE["Write: atomic file<br/>+ type + 1-line summary"]
+    WRITE --> INDEX["Add pointer to index"]
+    INDEX --> RECALL["Recall: summary matched to task<br/>surfaces as background context"]
+    RECALL --> VERIFY{"Verify on use<br/>(memory = true when written)"}
+    VERIFY -->|still true| USE["Use it"]
+    VERIFY -->|wrong| DELETE["Delete"]
