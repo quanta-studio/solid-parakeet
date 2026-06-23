@@ -30,3 +30,9 @@ Though, I decided to launch a framework to build a virtual engineering team, and
 4. [Verification](framework/verification.md)
 5. [Workflow](framework/workflow.md)
 6. [Potential Challenges](framework/potential_challenges.md)
+
+Last but not least, it requires someone to take initiative to set up the framework and keep it improving. It is not a one-time setup, but an ongoing process that requires continuous improvement and adaptation to the changing needs of the project and the virtual engineering team. In the fast-paced world of software development, Ai accelerated the process and the risk of lost control is relatively high, if someone expect this to be setup once and running forever, it's pretty dangerous thought.
+
+In such a high-paced environment, it's important to know that when should someone step in to slow down the process and take control of the project. This is especially true when working with a virtual engineering team, as they can quickly produce results that may not align with the project's goals or requirements. It is important to have a human engineer who can oversee the work of the virtual engineers and ensure that they are producing high-quality code that meets the project's standards.
+
+My two cents.
